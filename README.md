@@ -28,6 +28,16 @@ Veja os parâmetros disponíveis no cabeçalho de `scripts\rammap\Clear-RAMMapCa
 - `scripts\rammap\Clear-RAMMapCaches.ps1`: implementação.
 - `docs\RAMMAP.md`: detalhes técnicos.
 
+## Usar com IA (skill)
+
+Há uma skill pronta em `skills/rammap/SKILL.md`. Para usar em um agente compatível com skills, copie a pasta `skills/rammap` para o diretório de skills do agente (por exemplo, `~/.config/opencode/skills/`).
+
+Para consultar o estado da memória de forma estruturada, use:
+
+```
+rammap.cmd -Target Info -Json
+```
+
 ## Licença
 
 MIT. Veja [LICENSE](LICENSE).

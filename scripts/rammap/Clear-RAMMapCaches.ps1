@@ -45,7 +45,8 @@ param(
 
     [switch]$DryRun,
 
-    [switch]$NoElevate
+    [switch]$NoElevate,
+    [switch]$Json
 )
 
 Set-StrictMode -Off
@@ -216,7 +217,12 @@ function Show-ProcessList {
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-Write-Host "rammap - alvo: $Target" -ForegroundColor Cyan
+if (-not $Json) { Write-Host "rammap - alvo: $Target" -ForegroundColor Cyan }
+
+if ($Target -eq 'Info' -and $Json) {
+    Get-SystemMemorySummary | ConvertTo-Json -Compress
+    exit 0
+}
 
 if ($Target -eq 'Info') {
     $null = Write-MemorySummary 'Memoria'
