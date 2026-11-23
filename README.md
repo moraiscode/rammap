@@ -38,6 +38,15 @@ Para consultar o estado da memória de forma estruturada, use:
 rammap.cmd -Target Info -Json
 ```
 
+## Instalar o comando `rammap` (PATH)
+
+Para usar `rammap` de qualquer pasta, adicione o clone ao PATH do usuário (não precisa de administrador):
+
+```powershell
+.\scripts\rammap\Install-RAMMapAlias.ps1
+```n
+Depois, abra um novo terminal. O script é idempotente e coloca o clone no início do PATH, então vence um `rammap.cmd` antigo.
+
 ## Licença
 
 MIT. Veja [LICENSE](LICENSE).
