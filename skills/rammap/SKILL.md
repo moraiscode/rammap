@@ -46,6 +46,15 @@ Outros alvos:
 - `0`: sucesso.
 - `1`: falha (por exemplo, sem administrador ou sem privilégio disponível).
 
+Para ler o código no PowerShell, use `$LASTEXITCODE` logo após o comando:
+
+```
+.\rammap.cmd -Target Info -Json
+$LASTEXITCODE
+```
+
+Confirme o código antes de dizer que a ação deu certo.
+
 ## Cuidados
 
 - Para limpar é preciso um terminal **elevado** (administrador). Sem isso, o script informa e sai com código `1`. Não tente contornar o UAC.
