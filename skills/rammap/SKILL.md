@@ -7,6 +7,8 @@ description: "Limpa ou consulta a memoria RAM do Windows (Empty Working Sets e E
 
 Script em `scripts/rammap/Clear-RAMMapCaches.ps1`, chamado pelo atalho `rammap.cmd` na raiz do repositório. Não depende do `RAMMap.exe`.
 
+Localize o `rammap.cmd` antes de usar: a pasta do clone (por exemplo, `C:\Users\<usuario>\Desktop\REPO\rammap`). Se não souber onde está, pergunte ao usuário. Use o caminho completo ou rode a partir dessa pasta.
+
 ## Quando usar
 
 - Ver o estado da memória (total, livre, usada, percentual).
@@ -23,11 +25,7 @@ Consulta, sem administrador e sem alterar nada:
 rammap.cmd -Target Info -Json
 ```
 
-Saída (uma linha de JSON):
-
-```
-{"TotalGB":31.64,"AvailableGB":15.84,"UsedGB":15.8,"UsagePct":49.94}
-```
+Saída (uma linha de JSON, com os campos `TotalGB`, `AvailableGB`, `UsedGB` e `UsagePct`; os valores variam a cada consulta).
 
 Outros alvos:
 
