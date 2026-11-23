@@ -253,6 +253,12 @@ if ($DryRun) {
     exit 0
 }
 
+$filtroProcesso = ($ProcessName -or $ProcessId -gt 0)
+if ($filtroProcesso -and $Target -in @('WorkingSet', 'All') -and -not $DryRun -and @(Get-TargetProcesses).Count -eq 0) {
+    Write-Host ("Nenhum processo encontrado para '{0}'{1}. Nada foi alterado." -f $ProcessName, $(if ($ProcessId -gt 0) { " (PID $ProcessId)" } else { "" })) -ForegroundColor Yellow
+    exit 1
+}
+
 $isAdmin = Test-Administrator
 
 if (-not $isAdmin) {
